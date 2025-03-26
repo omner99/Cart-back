@@ -9,4 +9,11 @@ class Item extends Model
 {
     /** @use HasFactory<\Database\Factories\ItemFactory> */
     use HasFactory;
+    protected $fillable = ["name","quantity","price"];
+
+    public function customer()
+    {
+        //Estudiante tiene carrera_id
+        return $this->belongsTo(Customer::class);
+    }
 }
