@@ -11,7 +11,7 @@ class UpdateCustomerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,19 @@ class UpdateCustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+           'first_name'=> 'required',
+            'last_name'=> 'required',
+            'city'=> 'required',
+            'city'=> 'required',
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            "first_name.required"=>"Es necesario poner su nombre",
+            "last_name.required"=>"Es necesario poner los apellidos",
+            "addresses.required"=>"Es necesario poner su dirrecion"
+            
         ];
     }
 }

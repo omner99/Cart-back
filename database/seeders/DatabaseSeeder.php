@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ItemSeeder::class,
             CustomerSeeder::class,
-            AdressSeeder::class,
+            AddressSeeder::class,
         ]);
     }
 }

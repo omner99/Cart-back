@@ -9,7 +9,6 @@ class Item extends Model
 {
     /** @use HasFactory<\Database\Factories\ItemFactory> */
     use HasFactory;
-    // protected $table = "item";
 
     
     protected $fillable = ["name","quantity","price"];
