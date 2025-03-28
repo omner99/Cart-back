@@ -11,7 +11,7 @@ class UpdateItemRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,18 @@ class UpdateItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+           'name'=> 'required',
+            'quantity'=> 'required',
+            'price'=> 'required',
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            "name.required"=>"Es necesario poner un nombre",
+            "quantity.required"=>"Es necesario poner una cantidad",
+            "price.required"=>"Es necesario poner un precio"
+            
         ];
     }
 }

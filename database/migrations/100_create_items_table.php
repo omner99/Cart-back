@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string("name")->nullable()->default(null);
             $table->integer("quantity")->nullable()->default(null);
             $table->decimal("price", 8, 2)->nullable()->default(null);
-
             $table->timestamps();
         });
     }

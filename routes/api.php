@@ -2,26 +2,16 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\AddressController;
+use App\Http\Controllers\CustomerController;
 
-Route::get('/items', function () {
-    return 'lista item';
-});
-
-Route::get('/items/{id}', function () {
-    return 'un item';
-});
-
-Route::post('/items', function () {
-    return $request->item();
-});
-
-Route::put('/items/{id}', function () {
-    return $request->item();
-});
-
-Route::delete('/items/{id}', function () {
-    return $request->item();
-});
+Route::apiResource('items', ItemController::class);
+/*Route::get('/items',[ItemController::class,'index']);
+Route::get('/items/{id}',[ItemController::class,'show']);
+Route::post('/items',[ItemController::class,'store']);
+Route::put('/items/{id}',[ItemController::class,'update']);
+Route::delete('/items/{id}',[ItemController::class,'destroy']);*/
 
 Route::get('/customers', function () {
     return $request->customers();
