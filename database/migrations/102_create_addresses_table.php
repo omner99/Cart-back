@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("city")->nullable()->default(null);
             $table->string("state")->nullable()->default(null);
             $table->string("zip")->nullable()->default(null);
+            $table->foreignId('customer_id')->constrained('customers');
             $table->timestamps();
         });
     }
